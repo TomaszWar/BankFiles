@@ -1,0 +1,36 @@
+<html lang = "en-US">
+    <head>
+        <title>Bank of Tomasz</title>
+        <link rel="icon" type="image/ico" th:href="@{../static/favicon.ico}">
+    </head>
+    <body onload="hideErrors()">
+        <form class="form">
+            <label>
+                Name:
+                <input name="customer_name" type="text" placeholder="Customer Name" required>
+            </label><br>
+            <label>
+                Username:
+                <input name="username" type="text" placeholder="Username" required>
+            </label><br>
+            <div id = "usernameTaken">
+                <label class = "errorMessage">This username is taken, please try something else.</label>
+            </div>
+            <label>
+                Password:
+                <input name="password" type="password" placeholder="Password" required>
+            </label><br>
+            <label>
+                Initial Deposit:
+                <input name="balance" type="number" placeholder="Initial Deposit" required>
+            </label><br>
+            <div id = "invalidBalance">
+                <label class = "errorMessage">Cannot start with a negative balance.</label>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    <script src = "create.js"></script>
+    <script src = "alerts.js"></script>
+    <div id="alerts-container"></div>
+    </body>
+</html>
