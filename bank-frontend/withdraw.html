@@ -1,9 +1,10 @@
 <html lang = "en-US">
     <head>
         <title>Withdraw</title>
-        <link rel="icon" type="image/ico" th:href="@{../static/favicon.ico}">
+        <link rel="icon" type="image/ico" href="favicon.ico">
+        <link rel="stylesheet" href="alerts.css">
     </head>
-    <body onload = "toggleError()">
+    <body>
     <form class = "withdraw">
         <label>
             How much would you like to withdraw?
@@ -11,9 +12,10 @@
         </label>
         <button type = "submit">Withdraw</button>
     </form>
-    <div id = errorMessage>
-        <label>Insufficient Funds</label>
+    <div class="alerts">
+        <div id="alerts-container"></div>
     </div>
     </body>
     <script src = "withdraw.js"></script>
+    <script src = "alerts.js"></script>
 </html>

@@ -1,0 +1,51 @@
+html {
+    font-family: 'Roboto', sans-serif;
+}
+
+.alerts {
+    display: flex; /* FLEX LOOK UP ON https://css-tricks.com/snippets/css/a-guide-to-flexbox/ */
+    margin-top: 0.25rem;
+    position: fixed;
+    top: 1rem;
+    right: 10px;
+}
+
+.alerts-container {
+    display: flex; /* FLEX LOOK UP ON https://css-tricks.com/snippets/css/a-guide-to-flexbox/ */
+    flex-direction: column; /* Aligns the alerts vertically in a COLUMN */
+}
+
+.alert {
+    /* Display alert content */
+    display: flex; /* FLEX LOOK UP ON https://css-tricks.com/snippets/css/a-guide-to-flexbox/ */
+    flex-direction: row; /* Aligns the alert content horizontally in a ROW */
+    justify-content: space-between; /* Aligns the alert content horizontally in the center */
+    align-items: center; /* Aligns the alert content vertically in the center */
+    max-width: 100%;
+    /* Equalize alert sizes */
+    flex-grow: 1; /* Allows alerts to grow and take up equal space */
+    flex-basis: auto; /* Ensures alerts only take up as much space as their content needs */
+    /* Alert content styling */
+    padding: 0.75rem;
+    margin-bottom: 0.5rem;
+    border: 1px solid;
+    border-radius: 1rem;
+    font-size: 1rem;
+}
+
+.close-button {
+    /* Close button display */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Close button styling */
+    margin-left: 1rem;
+    cursor: pointer;
+    border: 0;
+    background-color: transparent;
+}
+
+.close-button img {
+    width: 0.5rem;
+    height: 0.5rem;
+}

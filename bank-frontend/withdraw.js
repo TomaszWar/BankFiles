@@ -1,13 +1,3 @@
-let errorMessage = document.getElementById("errorMessage");
-
-function toggleError(){
-    if(errorMessage.style.display === "none"){
-        errorMessage.style.display = "block";
-    }else{
-        errorMessage.style.display = "none";
-    }
-}
-
 const formEl = document.querySelector(".withdraw");
 
 formEl.addEventListener('submit', async event => {
@@ -28,14 +18,16 @@ formEl.addEventListener('submit', async event => {
 
         if (response.ok) {
             window.location.href = "userpage.html";
+        } else if (response.status === 401) {
+            addAlert("Error", "Insufficent Balance", "error");
+        } else if (response.status === 400) {
+            addAlert("Error", "Cannot withdraw a negative value", "error")
         } else {
-            if(errorMessage.style.display === "none") {
-                errorMessage.style.display = "block";
-            }
+            addAlert("Error", "Something went wrong, please try again", "error");
         }
+
     } catch (error) {
         console.error('Error during login request:', error);
-        window.location.href = "index.html";
     }
 
 });

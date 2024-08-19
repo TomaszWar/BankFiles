@@ -6,6 +6,11 @@ const colorSchemes = {
         text: "#000000",
         border: "#d32f2f"
     },
+    success: {
+        background: "#81c784",
+        text: "#000000",
+        border: "#4caf50"
+    },
 };
 
 const addAlert = (title, message, type) => {
@@ -41,9 +46,9 @@ const showAlert = (newAlert, backgroundColor, textColor, borderColor) => {
     alertElement.style.borderColor = borderColor;
 
     alertElement.innerHTML = `
-        <div>${newAlert.title}: ${newAlert.title}</div>
-        <button onClick="closeAlert(${newAlert.id})" class = closeButton>
-            <img src = "x.png" alt = "Close" width = "8" height = "8">
+        <div>${newAlert.title}: ${newAlert.message}</div>
+        <button onClick="closeAlert(${newAlert.id})" class = close-button>
+            <img src = "x.png" alt = "Close">
         </button>
     `;
 

@@ -5,3 +5,7 @@ function redirectCreate(){
 function redirectLogIn(){
     window.location.href = "login.html";
 }
+
+function error(){
+    addAlert("Error", "Hello", "error");
+}

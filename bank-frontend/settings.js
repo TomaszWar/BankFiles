@@ -50,16 +50,18 @@ formElUser.addEventListener('submit', async event => {
                 },
                 body: JSON.stringify(data)
             })
-        }
-
-        if(response.ok){
-            sessionStorage.setItem("username", newUsername.substring(0));
-            window.location.href = "http://localhost:8080/userpage";
+            sessionStorage.setItem("username", newUsername);
+            addAlert("Success", "Username successfully changed", "success")
+            setTimeout (() => {
+                window.location.href = "userpage.html"
+            }, 2000);
+        }else{
+            addAlert("Error", "Current password does not match", "error");
         }
 
     } catch (error) {
         console.error('Error during login request:', error);
-        window.location.href = "http://localhost:8080/index";
+        window.location.href = "index.html";
     }
 
 });
@@ -82,6 +84,9 @@ formElPass.addEventListener('submit', async event => {
         const json = await response.json();
         const correctPass = json.password;
 
+        console.log("CurrentPass", formData.get("currentPassword"));
+        console.log("Correctpass", correctPass);
+
         if(formData.get("currentPassword") === correctPass){
 
             if(formData.get("password") === formData.get("confirmPassword"))
@@ -90,7 +95,7 @@ formElPass.addEventListener('submit', async event => {
                 updateUrl += username;
                 formData.delete("currentPassword");
                 formData.delete("confirmPassword");
-                const updateResponse = await fetch(updateUrl, {
+                response = await fetch(updateUrl, {
                     method: 'PUT',
                     headers: {
                         'Content-Type': 'application/json'
@@ -98,14 +103,11 @@ formElPass.addEventListener('submit', async event => {
                     body: JSON.stringify(data)
                 })
             }
-        }
-
-        if(response.ok){
-            window.location.href = "userpage.html";
+        }else{
+            addAlert("Error", "Current password does not match", "error");
         }
 
     } catch (error) {
         console.error('Error during login request:', error);
-        window.location.href = "index.html";
     }
 });

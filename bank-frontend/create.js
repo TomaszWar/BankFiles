@@ -1,14 +1,3 @@
-let usernameError = document.getElementById("usernameTaken");
-let balanceError = document.getElementById("invalidBalance")
-
-
-function hideErrors(){
-    usernameError.style.display = "none";
-    balanceError.style.display = "none";
-    addAlert("Error", "Error", "error");
-}
-
-
 const formEl = document.querySelector('.form');
 
 formEl.addEventListener('submit', async event => {

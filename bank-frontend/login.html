@@ -1,7 +1,8 @@
 <html lang = "en-US">
     <head>
         <title>LogIn</title>
-        <link rel="icon" type="image/ico" th:href="@{../static/favicon.ico}">
+        <link rel="icon" type="image/ico" href="favicon.ico">
+        <link rel="stylesheet" href="alerts.css">
     </head>
     <body onload = "toggleError()">
         <form class = "logIn">
@@ -15,9 +16,10 @@
             </label><br>
             <button type = "submit">Log In</button>
         </form>
-        <div id = "errorMessage">
-            <label>Username or Password do not match</label>
+        <div class="alerts">
+            <div id="alerts-container"></div>
         </div>
-        <script src = "login.js"></script>
     </body>
+    <script src="login.js"></script>
+    <script src="alerts.js"></script>
 </html>

@@ -1,7 +1,8 @@
 <html lang = "en-US">
     <head>
         <title>Deposit</title>
-        <link rel="icon" type="image/ico" th:href="@{../static/favicon.ico}">
+        <link rel="icon" type="image/ico" href="favicon.ico">
+        <link rel="stylesheet" href="alerts.css">
     </head>
     <body>
         <form class = "deposit">
@@ -11,7 +12,10 @@
             </label>
             <button type = "submit">Deposit</button>
         </form>
+        <div class="alerts">
+            <div id="alerts-container"></div>
+        </div>
     </body>
-
-    <script src = "deposit.js"></script>
+    <script src="deposit.js"></script>
+    <script src="alerts.js"></script>
 </html>

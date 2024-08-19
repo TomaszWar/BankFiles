@@ -1,13 +1,3 @@
-const errorMessage = document.getElementById("errorMessage");
-
-function toggleError(){
-    if(errorMessage.style.display === "none"){
-        errorMessage.style.display = "block";
-    }else{
-        errorMessage.style.display = "none";
-    }
-}
-
 const formEl = document.querySelector('.logIn');
 
 formEl.addEventListener('submit', async event => {
@@ -28,11 +18,10 @@ formEl.addEventListener('submit', async event => {
         if (response.ok) {
             sessionStorage.setItem("username", document.getElementById("username").value);
             window.location.href = "successfulrequest.html";
+        } else if (response.status === 401) {
+            addAlert("Error", "Username or password do not match", "error");
         } else {
-            if(errorMessage.style.display === "none")
-            {
-                toggleError();
-            }
+            addAlert("Error", "Something went wrong, please try again", "error");
         }
     } catch (error) {
         console.error('Error during login request:', error);

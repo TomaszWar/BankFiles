@@ -20,12 +20,16 @@ formEl.addEventListener('submit', async event => {
 
         if (response.ok) {
             window.location.href = "userpage.html";
-        } else {
-            window.location.href = "index.html";
+        } else if(response.status === 401) {
+            console.log(response);
+            addAlert("Error", "Cannot deposit a negative value", "error");
+        }else{
+            addAlert("Error", "Something went wrong please try again", "error");
+            console.log(response.status)
         }
     } catch (error) {
         console.error('Error during login request:', error);
-        window.location.href = "index.html";
+        // window.location.href = "index.html";
     }
 
 });
