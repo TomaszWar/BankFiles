@@ -53,7 +53,6 @@ const showAlert = (newAlert, backgroundColor, textColor, borderColor) => {
     `;
 
     console.log("AfterAkertElement: ", alertElement);
-
     document.getElementById("alerts-container").appendChild(alertElement);
 };
 

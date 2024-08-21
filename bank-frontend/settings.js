@@ -50,11 +50,18 @@ formElUser.addEventListener('submit', async event => {
                 },
                 body: JSON.stringify(data)
             })
-            sessionStorage.setItem("username", newUsername);
-            addAlert("Success", "Username successfully changed", "success")
-            setTimeout (() => {
-                window.location.href = "userpage.html"
-            }, 2000);
+            if(updateResponse.ok){
+                sessionStorage.setItem("username", newUsername);
+                addAlert("Success", "Username successfully changed", "success")
+                setTimeout (() => {
+                    window.location.href = "userpage.html"
+                }, 2000);
+            }else if(updateResponse.status === 409){
+                addAlert("Error", "Username already taken", "error");
+            }else{
+                addAlert("Error", "Something went wrong, please try again", "error");
+            }
+
         }else{
             addAlert("Error", "Current password does not match", "error");
         }

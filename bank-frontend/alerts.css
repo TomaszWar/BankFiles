@@ -10,7 +10,7 @@ html {
     right: 10px;
 }
 
-.alerts-container {
+#alerts-container {
     display: flex; /* FLEX LOOK UP ON https://css-tricks.com/snippets/css/a-guide-to-flexbox/ */
     flex-direction: column; /* Aligns the alerts vertically in a COLUMN */
 }
