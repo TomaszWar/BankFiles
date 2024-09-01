@@ -1,0 +1,38 @@
+<html lang = "en-US">
+    <head>
+        <title>Bank of Tomasz</title>
+        <link rel="icon" type="image/ico" href="favicon.ico">
+        <link rel="stylesheet" href="styles/alerts.css">
+        <link rel="stylesheet" href="styles/style.css">
+    </head>
+    <body onload="hideErrors()">
+        <div class="main-container">
+            <div class="element-container">
+                <form class="form">
+                    <label>
+                        Name:
+                        <input name="customer_name" type="text" placeholder="Customer Name" required>
+                    </label><br>
+                    <label>
+                        Username:
+                        <input name="username" type="text" placeholder="Username" required>
+                    </label><br>
+                    <label>
+                        Password:
+                        <input name="password" type="password" placeholder="Password" required>
+                    </label><br>
+                    <label>
+                        Initial Deposit:
+                        <input name="balance" type="number" placeholder="Initial Deposit" required>
+                    </label><br>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+        <div class="alerts">
+            <div id="alerts-container"></div>
+        </div>
+    </body>
+    <script src = "js/create.js"></script>
+    <script src = "js/alerts.js"></script>
+</html>

@@ -1,0 +1,52 @@
+<html lang = "en-US">
+    <head>
+        <title>Account Settings</title>
+        <link rel="icon" type="image/ico" href="favicon.ico">
+        <link rel="stylesheet" href="styles/alerts.css">
+        <link rel="stylesheet" href="styles/style.css">
+    </head>
+    <body onload = "hideMenus()">
+        <div class="main-container">
+            <div class="element-container">
+                <label>What would you like to do today?</label><br>
+                <button onclick = "showHideUsername()">Change Username</button>
+                <div id="usernameChange">
+                    <form class = "usernameUpdate">
+                        <label>
+                            New Username: <br>
+                            <input name = "username" type = "text" placeholder = "New Username" required>
+                        </label><br>
+                        <label>
+                            Confirm Password: <br>
+                            <input name = "password" type = "password" placeholder = "Password" required>
+                        </label><br>
+                        <button type = "submit">Submit</button>
+                    </form>
+                </div>
+                <button onclick = "showHidePassword()">Change Password</button>
+                <div id = "passwordChange">
+                    <form class = passwordUpdate>
+                        <label>
+                            Current Password: <br>
+                            <input name = currentPassword type = "password" placeholder = "Current Password" required>
+                        </label><br>
+                        <label>
+                            New Password: <br>
+                            <input name = "password" type = "password" placeholder = "New Password" required>
+                        </label><br>
+                        <label>
+                            Confirm Password: <br>
+                            <input name = "confirmPassword" type = "password" placeholder = "Confirm Password" required>
+                        </label><br>
+                        <button type = "submit">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="alerts">
+            <div id="alerts-container"></div>
+        </div>
+    </body>
+    <script src = "js/settings.js"></script>
+    <script src = "js/alerts.js"></script>
+</html>

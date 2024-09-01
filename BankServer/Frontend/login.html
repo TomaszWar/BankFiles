@@ -1,0 +1,30 @@
+<html lang = "en-US">
+    <head>
+        <title>LogIn</title>
+        <link rel="icon" type="image/ico" href="favicon.ico">
+        <link rel="stylesheet" href="styles/alerts.css">
+        <link rel="stylesheet" href="styles/style.css">
+    </head>
+    <body onload = "toggleError()">
+        <div class="main-container">
+            <div class="element-container">
+                <form class = "logIn">
+                    <label>
+                        Username:
+                        <input id = "username" name = "username" type = "text" placeholder="Username" required><br>
+                    </label>
+                    <label>
+                        Password:
+                        <input name = "password" type = "password" placeholder="Password" required>
+                    </label><br>
+                    <button type = "submit">Log In</button>
+                </form>
+            </div>
+        </div>
+        <div class="alerts">
+            <div id="alerts-container"></div>
+        </div>
+    </body>
+    <script src="js/login.js"></script>
+    <script src="js/alerts.js"></script>
+</html>

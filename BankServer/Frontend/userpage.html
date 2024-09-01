@@ -1,0 +1,20 @@
+<html lang = "en-US">
+    <head>
+        <title>Home</title>
+        <link rel="icon" type="image/ico" href="favicon.ico">
+        <link rel="stylesheet" href="styles/style.css">
+    </head>
+    <body onload = "getUser()">
+        <div class="main-container">
+            <div class="element-container">
+                <p id = "welcome-message">Hello </p>
+                <p id = "balance">Balance: $</p>
+                <p>What can we do for you today?</p>
+                <button onclick = "redirectDeposit()">Deposit</button>
+                <button onclick = "redirectWithdraw()">Withdraw</button>
+                <button onclick = "redirectSettings()">Account Settings</button>
+            </div>
+        </div>
+    </body>
+    <script src = "js/user.js"></script>
+</html>
