@@ -1,0 +1,3 @@
+[submodule "BankServerProject2024/BankServerProject2024/BankBackend/bankserver"]
+	path = BankServerProject2024/BankServerProject2024/BankBackend/bankserver
+	url = https://github.com/TomaszWar/BankFiles
