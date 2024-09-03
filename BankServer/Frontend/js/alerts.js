@@ -1,5 +1,6 @@
 let alertCounter = 0;
 
+// Constant set of potenital color schemes for alerts to use
 const colorSchemes = {
     error: {
         background: "#e57373",
@@ -13,8 +14,8 @@ const colorSchemes = {
     },
 };
 
+// Creates a new alert when requested
 const addAlert = (title, message, type) => {
-    console.log("addAlert: ", title, message, type);
     const {background, text, border} = colorSchemes[type?.toLowerCase()] || {
         background: "teal",
         text: "black",
@@ -30,21 +31,18 @@ const addAlert = (title, message, type) => {
     showAlert(newAlert, background, text, border);
 }
 
+// Displays new alerts to the screen.
 const showAlert = (newAlert, backgroundColor, textColor, borderColor) => {
-    console.log("showAlert: ", newAlert, backgroundColor, textColor, borderColor);
 
     const alertElement = document.createElement("div");
     alertElement.id = `alert-${newAlert.id}`;
     alertElement.className = "alert";
 
-    const beforeElementAlert = alertElement.cloneNode(true);
-
-    console.log("beforeAlertElement: ", beforeElementAlert);
-
     alertElement.style.backgroundColor = backgroundColor;
     alertElement.style.color = textColor;
     alertElement.style.borderColor = borderColor;
 
+    // Generated the HTML code of the alert to be displayed
     alertElement.innerHTML = `
         <div>${newAlert.title}: ${newAlert.message}</div>
         <button onClick="closeAlert(${newAlert.id})" class = close-button>
@@ -52,10 +50,11 @@ const showAlert = (newAlert, backgroundColor, textColor, borderColor) => {
         </button>
     `;
 
-    console.log("AfterAkertElement: ", alertElement);
+    // Adds HTML to page to display the alert
     document.getElementById("alerts-container").appendChild(alertElement);
 };
 
+// Handles closing the alerts
 const closeAlert = (id) => {
     const alertElement = document.getElementById(`alert-${id}`);
 

@@ -1,14 +1,20 @@
-// https://stackoverflow.com/questions/46302090/spring-boot-custom-favicon-ico-not-showing
+//
+
+/**
+ * This class is NOT my own, it is used to resolve a favicon.ico error and is taken from StackOverflow
+ * user Nikita Shcherbakov
+ * Source: https://stackoverflow.com/questions/46302090/spring-boot-custom-favicon-ico-not-showing
+*/ 
 
 package dev.tomasz.bank.frontend;
+
+import java.util.Collections;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.web.servlet.handler.SimpleUrlHandlerMapping;
 import org.springframework.web.servlet.resource.ResourceHttpRequestHandler;
-
-import java.util.Collections;
 
 @Configuration
 public class FaviconConfiguration {
