@@ -1,6 +1,6 @@
 This is Spring-Boot based bank application developed by Tomasz Wargala (UW Madison BS CS Student) in the summer of 2024.
 The backend applicaiton runs off a spring-boot server running on port 8080 that handles all REST API requests,
-The backend stores all data in a my-sql server ran on port 3306, using Docker (Docker myust be running to run the backend server).
+The backend stores all data in a my-sql server ran on port 3306, using Docker (Docker must be running to run the backend server).
 The frontend of the project is run off Node.js on port 8000.
 
 -- Run Instructions --
