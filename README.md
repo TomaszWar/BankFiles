@@ -16,6 +16,6 @@ Navigate to ".../BankServer/Frontend" <br>
 Run "npm run run" in the terminal <br>
 
 ## -- Use Instructions -- ##
-Open a browser of choice
-Go to "http://localhost:8000"
+Open a browser of choice <br>
+Go to "http://localhost:8000" <br>
 Explore!
